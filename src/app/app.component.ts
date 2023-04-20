@@ -6,5 +6,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'pipes';
+  payeeName = ""
+  date = ""
+  amount=0;
+  miles=0;
+  onChangeName(event:Event){
+    const target = event.target as HTMLInputElement;
+    const value = target.value;
+    this.payeeName = value;
+  }
+
+  onChangeDate(event:Event){
+    const target = event.target as HTMLInputElement;
+    const value = target.value;
+    this.date = value;
+  }
+
+  onChangeAmount(event:Event){
+    const target = event.target as HTMLInputElement;
+    const value = target.value;
+    this.amount = parseFloat(value);
+  }
+  onChangeMiles(event:Event){
+    const target = event.target as HTMLInputElement;
+    const value = target.value;
+    this.miles = parseFloat(value);
+  }
 }
